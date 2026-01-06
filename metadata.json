@@ -1,0 +1,8 @@
+{
+  "name": "WithYou - Family Safety",
+  "description": "Safety Feels Like Family. An intelligent companion powered by Azure AI.",
+  "requestFramePermissions": [
+    "geolocation",
+    "microphone"
+  ]
+}

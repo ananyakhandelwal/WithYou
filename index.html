@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WithYou - Safety Feels Like Family</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <!-- Leaflet Map Library -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <style>
+      :root {
+        /* Light Mode (Warm Family Theme) */
+        --bg-primary: #FFF5F5;
+        --bg-secondary: #FED7D7;
+        --surface: #FFFFFF;
+        --text-primary: #2D3748;
+        --text-secondary: #718096;
+        --brand-primary: #E53E3E; /* Warm Red */
+        --brand-hover: #C53030;
+        --accent: #ED8936;
+        --border: rgba(45, 55, 72, 0.1);
+        --map-filter: sepia(0.2) contrast(1.1);
+      }
+
+      [data-theme='dark'] {
+        /* Dark Mode (High Contrast Safety) */
+        --bg-primary: #171923;
+        --bg-secondary: #2D3748;
+        --surface: #2D3748;
+        --text-primary: #F7FAFC;
+        --text-secondary: #A0AEC0;
+        --brand-primary: #FC8181; /* Soft Red */
+        --brand-hover: #F56565;
+        --accent: #F6AD55;
+        --border: rgba(255, 255, 255, 0.1);
+        --map-filter: invert(1) grayscale(1) brightness(0.7);
+      }
+
+      body {
+        font-family: 'Quicksand', 'Inter', sans-serif;
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        overflow-x: hidden;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      
+      .bg-theme-surface { background-color: var(--surface); }
+      .bg-theme-secondary { background-color: var(--bg-secondary); }
+      .text-theme-primary { color: var(--text-primary); }
+      .text-theme-secondary { color: var(--text-secondary); }
+      .border-theme { border-color: var(--border); }
+      
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: var(--brand-primary);
+        border-radius: 10px;
+        opacity: 0.6;
+      }
+      @keyframes breathe {
+        0%, 100% { transform: scale(1); opacity: 0.5; }
+        50% { transform: scale(1.5); opacity: 1; }
+      }
+      .animate-breathe {
+        animation: breathe 4s ease-in-out infinite;
+      }
+      .siren-flash {
+        animation: siren-flash 0.5s infinite;
+      }
+      @keyframes siren-flash {
+        0%, 100% { background-color: rgba(229, 62, 62, 0.2); }
+        50% { background-color: transparent; }
+      }
+      /* Tactical Map Theming */
+      .tactical-map {
+        filter: var(--map-filter);
+        transition: filter 0.3s ease;
+      }
+      .leaflet-control-attribution {
+        display: none !important;
+      }
+    </style>
+    <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@19.0.0",
+    "react-dom": "https://esm.sh/react-dom@19.0.0",
+    "react-dom/client": "https://esm.sh/react-dom@19.0.0/client",
+    "lucide-react": "https://esm.sh/lucide-react@0.475.0?external=react",
+    "recharts": "https://esm.sh/recharts@2.15.0?external=react,react-dom",
+    "@google/genai": "https://esm.sh/@google/genai@1.34.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/"
+  }
+}
+</script>
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
