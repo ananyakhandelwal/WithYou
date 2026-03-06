@@ -1,18 +1,37 @@
+# WithYou
+### AI‑Powered Safety System for Silent Emergencies
 
+## Overview
+**WithYou** is a privacy‑first safety application designed to detect distress or medical emergencies when users cannot actively reach out for assistance. The system combines voice triggers, behavioral anomaly detection, and automated alerts to ensure users remain connected to trusted contacts and nearby emergency services.
 
-# Run and deploy your AI Studio app
+## Features
 
-This contains everything you need to run your app locally.
+### Safe Word Detection
+Detects customizable voice triggers in the background using **Azure AI Speech**, allowing users to activate emergency responses even when the device is locked or inaccessible.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1ndc9uYYodp30R3GuG36VpIIX4VVrGq4D
+### Anomaly Detection
+Uses **Azure Cognitive Services – Anomaly Detector** to identify unusual inactivity or behavioral patterns that may indicate a potential emergency.
 
-## Run Locally
+### Trusted Circle Alerts
+Automatically notifies selected contacts such as family members or caregivers using **Azure Communication Services**, ensuring immediate communication during critical situations.
 
-**Prerequisites:**  Node.js
+### Chatbot & Voice Intake
+Allows users to communicate their condition using **text or voice**, enabling guided responses during stressful or medical situations.
 
+### Nearby Emergency Services
+Provides quick access to nearby **hospitals, police stations, and pharmacies** using real‑time location to support faster emergency response.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## Tech Stack
+- **Azure AI Speech** – Voice trigger detection  
+- **Azure Cognitive Services – Anomaly Detector** – Behavioral anomaly detection  
+- **Azure Communication Services** – Messaging and call alerts  
+
+## Use Cases
+- Elderly individuals living independently  
+- People with medical conditions such as epilepsy or diabetes  
+- Students or professionals living alone  
+- Individuals experiencing sudden distress situations  
+
+## Team
+**Team SilentSignals**  
+Project developed for the **Microsoft Imagine Cup**
